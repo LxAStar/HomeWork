@@ -150,9 +150,9 @@ class PixorModel:
                         self.optimizer.zero_grad()
 
                 total_losses += np.array([cls_loss.item(), reg_loss.item(), sum_loss.item()])
-
-        # add * because we expand our dataset by +(num of augment data) every step
-        total_losses /= (len(dataset) * len(list_grid))
+                # add * because we expand our dataset by +(num of augment data) every step
+                total_losses /= (len(dataset) * len(list_grid))
+                print(total_losses)
 
         period_str = str(period)
         self.summary[period_str].history.cls_loss.append(total_losses[0])
