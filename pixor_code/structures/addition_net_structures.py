@@ -133,6 +133,7 @@ class PixorModel:
                                                           leave=False):
             for idx in range(len(list_grid)):
                 # unpack augment data
+                print(idx)
                 grid, cls_target, reg_target, annos = list_grid[idx], list_output_class[idx], list_output_reg[idx], list_anno[idx]
                 # the same train
                 with torch.set_grad_enabled(requires_grad):
